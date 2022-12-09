@@ -27,4 +27,54 @@ public class Exos {
             i++;
         }
     }
+
+    // Fonction qui prend un nombre entier et retourne le plus petit carré supérieur à n
+    public void smallest_square_next_of_n(int n){
+        double intToDoubleConverted = n;
+        double squareRootOfN = Math.sqrt(intToDoubleConverted);
+        double roundedUpNumber = Math.ceil(squareRootOfN);
+        int roundedUpNumberConverted = (int)roundedUpNumber;
+        int nextSquare = roundedUpNumberConverted*roundedUpNumberConverted;
+        if(n == nextSquare) {
+            System.out.println((roundedUpNumberConverted+1)*(roundedUpNumberConverted+1));
+        }else{
+            System.out.println(nextSquare);
+        }
+    }
+
+    // Fonction qui prend un nombre entier et retourne le plus grand carré inférieur à n
+    public void greatest_square_previous_of_n(int n){
+        double intToDoubleConverted = n;
+        double squareRootOfN = Math.sqrt(intToDoubleConverted);
+        double roundedDownNumber =Math.floor(squareRootOfN);
+        int roundedDownNumberConverted = (int)roundedDownNumber;
+        int previousSquare = roundedDownNumberConverted*roundedDownNumberConverted;
+        if(n == previousSquare){
+            System.out.println((roundedDownNumberConverted-1)*(roundedDownNumberConverted-1));
+        }else{
+            System.out.println(previousSquare);
+        }
+    }
+
+    // Fonction qui
+    public void fibo(int limit){
+        int[] fiboArray = new int[limit];
+        fiboArray[0] = 0;
+        fiboArray[1] = 1;
+        int i=1;
+
+        while(i < limit -1) {
+            int previousNumber = fiboArray[i - 1];
+            int actualNumber = fiboArray[i];
+            int futurNumber = previousNumber + actualNumber;
+            i++;
+            fiboArray[i] = futurNumber;
+        }
+        for(int affichage = 0; affichage < limit; affichage++){
+                System.out.println(fiboArray[affichage]);
+        }
+    }
+
+
+
 }
